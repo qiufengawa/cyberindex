@@ -2,7 +2,7 @@
 
 > 赛博朋克风格个人展示页 + PHP 后台管理系统
 
-[English](#english) | 中文
+[English](./README_EN.md) | 中文
 
 ---
 
@@ -111,63 +111,5 @@ location ~ \.(db|sqlite|sqlite3)$ { deny all; }
 ```
 
 ## 许可
-
-MIT
-
----
-
-<a id="english"></a>
-
-## English
-
-> Cyberpunk-styled personal portfolio + PHP admin panel
-
-### Introduction
-
-CyberIndex is a lightweight personal portfolio system with a cyberpunk/glitch design aesthetic. The frontend delivers a visually striking personal homepage, while the backend provides full content management — every piece of text is editable from the admin panel.
-
-Minimal tech stack: vanilla PHP 8.3+ with no framework dependencies; SQLite as the database for zero-config deployment.
-
-### Features
-
-**Frontend**
-- CRT scanlines, chromatic aberration, neon glow, chamfered corner cards
-- Multi-page: Home, About (bio + awards timeline), Projects (list + detail), Contact
-- All text dynamically rendered from database, fully customizable
-- Responsive design, mobile-friendly
-- `prefers-reduced-motion` accessibility support
-
-**Admin Panel**
-- Installation wizard (environment check → admin setup → auto database creation)
-- Shared layout component with unified sidebar navigation
-- Full CRUD: profile, skills, projects, awards, contacts
-- Dashboard: stats, system info, login logs, quick actions
-- All frontend text editable from admin (nav, buttons, titles, descriptions, footer, etc.)
-
-**Security**
-- Argon2id password hashing
-- CSRF token protection
-- PDO prepared statements (SQL injection prevention)
-- XSS output escaping
-- IP-based rate limiting (5 attempts / 15 minutes)
-- Secure sessions (HttpOnly + Secure + SameSite=Strict)
-- SQLite stored in randomized 32-char hash directory
-- install.php auto-locks after installation
-
-### Requirements
-
-- PHP >= 8.3
-- pdo_sqlite extension
-- Argon2id support
-- Nginx / Apache
-
-### Quick Start
-
-1. Deploy to your web server
-2. Visit `/install.php` and follow the wizard
-3. Visit `/admin/` to log in and manage content
-4. Visit `/` to see the frontend
-
-### License
 
 MIT
