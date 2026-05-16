@@ -1,0 +1,21 @@
+# Deny access to sensitive directories and files
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block access to data directory
+    RewriteRule ^data/ - [F,L]
+
+    # Block access to core directory
+    RewriteRule ^core/ - [F,L]
+
+    # Block config file
+    RewriteRule ^config\.inc\.php$ - [F,L]
+</IfModule>
+
+# Block directory listing
+Options -Indexes
+
+# Block access to .db files
+<FilesMatch "\.(db|sqlite|sqlite3)$">
+    Require all denied
+</FilesMatch>
